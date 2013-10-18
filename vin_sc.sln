@@ -1,0 +1,74 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib", "lib\lib.vcproj", "{07668918-DF10-46EE-AC64-40505BC023A1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo", "demo\demo.vcproj", "{A078E761-2BD8-4A56-8CAB-F91533E3B71D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07668918-DF10-46EE-AC64-40505BC023A1} = {07668918-DF10-46EE-AC64-40505BC023A1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
+		Debug|Smartphone 2003 (ARMV4) = Debug|Smartphone 2003 (ARMV4)
+		Debug|Win32 = Debug|Win32
+		Debug|Win32CE = Debug|Win32CE
+		Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I) = Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Pocket PC 2003 (ARMV4) = Release|Pocket PC 2003 (ARMV4)
+		Release|Smartphone 2003 (ARMV4) = Release|Smartphone 2003 (ARMV4)
+		Release|Win32 = Release|Win32
+		Release|Win32CE = Release|Win32CE
+		Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I) = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Mixed Platforms.ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Mixed Platforms.Build.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Mixed Platforms.Deploy.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Smartphone 2003 (ARMV4).ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Win32.Build.0 = Debug|Win32
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Win32CE.ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Win32CE.Build.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Win32CE.Deploy.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Mixed Platforms.ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Mixed Platforms.Build.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Mixed Platforms.Deploy.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Smartphone 2003 (ARMV4).ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Win32.ActiveCfg = Release|Win32
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Win32.Build.0 = Release|Win32
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Win32CE.ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Win32CE.Build.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Win32CE.Deploy.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{07668918-DF10-46EE-AC64-40505BC023A1}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Mixed Platforms.ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Mixed Platforms.Build.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Mixed Platforms.Deploy.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Smartphone 2003 (ARMV4).ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Win32.Build.0 = Debug|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Win32CE.ActiveCfg = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Win32CE.Build.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Win32CE.Deploy.0 = Debug|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Mixed Platforms.ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Mixed Platforms.Build.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Mixed Platforms.Deploy.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Smartphone 2003 (ARMV4).ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Win32.ActiveCfg = Release|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Win32.Build.0 = Release|Win32
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Win32CE.ActiveCfg = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Win32CE.Build.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Win32CE.Deploy.0 = Release|imx313dsmobilitysdk (ARMV4I)
+		{A078E761-2BD8-4A56-8CAB-F91533E3B71D}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

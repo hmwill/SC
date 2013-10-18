@@ -1,0 +1,179 @@
+This file explains the format of the file containing rollercoaster track
+description.
+
+How to specify the file containing the track?
+=============================================
+-t option is followed by a file name. If -t option is not given to roller, it
+tries to open a file called rc2k.trk. If this file is not found, or an error
+occur while it is read, the animation starts with the default coaster.
+
+So if you've got a file containing a rollercoaster, give this file name to
+roller using  -t option, or change this file name to rc2k.trk
+
+An example track
+================
+The file "rc2k.trk" contained in the archive is a description of the default
+coaster, and is of course an excellent example.
+
+How is the track generated from the description?
+================================================
+The main part of the description is a curve described by a series of control
+points. Each control point is made of the coordinate of this point, and the
+curve's tangent at this point (which can also be seen as the curve's direction
+at this point). The curve goes through each control point.
+
+This curve must be closed and gives the shape of the track. Banking of track
+at bends is automatically computed from curvature. Before generating rails and
+tubes, this curve is converted to a series of line segments.
+
+Track file format
+=================
+The file contains several sections which are optional (except the Track
+section). Section name is not case sensitive. Following section name, there
+are many lines containing numbers or coordinates. Their meaning depends on the
+section type. Sections do not need to appear in a specific order.
+
+A 3D coordinate is made of x, y, and z components separated by space and/or
+tab characters. Z unit vector points upward. X and Y unit vector define a
+horizontal plane which is the ground.
+
+A # character starts a comment. This character and the rest of the line is
+ignored. Comments can appear anywhere in the file.
+
+The following paragraphs explain the meaning and contents of each section
+type:
+
+§ The Track section
+===================
+A track section begins with a line containing the section name: Track. The
+next line contains a positive integer which is the number of control points
+that describe the curve. Each following line contains a control point. First
+part of a control point is it's 3D coordinate. The second part of a control
+point is the coordinate of the tangent to the curve (coordinate of direction
+vector) at this point. Those two parts must be separated by a comma or a
+semicolon.
+
+The direction of the curve at a control point can't be represented by a null
+vector. However, tangent can be given as a null vector. In this case, tangent
+is computed as the coordinate of the succeeding control point minus coordinate
+of the preceding control point.
+
+The curve runs through all control points, in the order they are given. The
+curve is automatically closed, that is to say the last control point is
+automatically linked to the first.
+
+§ The SupportCoordinate section
+===============================
+A SupportCoordinate section begins with a line containing the section name:
+SupportCoordinate. The next line contains a positive integer which is the
+number of supports defined by their coordinate. After that there must be as
+many lines as supports. Each lines contains coordinate for one support.
+
+A support is made of two pillars. If the track goes through those two pillars,
+they are linked to the track at that point.
+
+A support is defined by its position and its direction. The support position
+is given by its 3D coordinate. Usually the z coord must be zero, and the
+support height is computed automatically. However, if the z coord is not null,
+then it represents the maximal support's height (the support won't be higher
+than that). Support position and direction must be separated by a comma or a
+semicolon.
+
+The support direction is given by the 3D coordinate of the direction vector
+(the tangent to the track at this position). The z coordinate should be zero
+(because a support is always vertical). However if it is strictly negative,
+the bottom of the support won't be 0 but the absolute value of the z coord.
+If th z coord is positive, then it represents the exact support height. This
+can be used to create really high pillars. In this case, a board (with
+rollercoaster 2000 logo) is attached at the top of the support.
+
+§ The SupportAbscisse section
+=============================
+This section provides with a different way of defining support. A
+SupportAbscisse section begins with a line containing the section name:
+SupportAbscisse. The next line contains a positive integer which is the number
+of support defined by their abscisse. Each following line contains a positive
+integer repesenting an abscisse.
+
+The track is made of a series of line segments. Line 0 is the one that
+starts from the first control point. So those lines are represented by their
+abscisse (or index). A support is placed at the beginning of a corresponding
+line, given by its abscisse.
+
+§ The Box section
+=================
+A Box section begins with a line containing the section name: Box. The object
+described in this section is the great metal box that lies on the ground,
+under the rails, at the place where the train stops. The line following
+section name must contains box position, which is a 3D coordinates. The z
+coordinate indicates the box's height. The next line must contain a single
+number, which is the box length. The next line must contain a single number
+which is the box's rotation angle around an upward vector placed on the center
+of the box.
+
+§ The StartSegment section
+==========================
+A StartSegment section begins with a line containing the section name:
+StartSegment. The following line must contain an integer. This integer is the
+number of the line segment where the ride must start. If this integer is
+negative, then it represents the line segment in a reverse order (starting
+from the last segment of the track).
+
+This StartSegment only indicates where the train starts for the first ride.
+After the first ride, train starts from where it stopped.
+
+If there is no StartSegment section in the track file, the default value for
+the StartSegment is -5.
+
+§ The BrakeSegment section
+==========================
+A BrakeSegment section begins with a line containing the section name:
+BrakeSegment. The following line must contain an integer. This integer is the
+number of the line segment where the train must start to brake. From this
+point, the train brakes until its speed becomes null. If the Brake Segment is
+negative, then it represents the line segment in a reverse order (starting
+from the last segment of the track).
+
+If there is no BrakeSegment section in the track file, the default value for
+the BrakeSegment is -20.
+
+§ The TiltFactor section
+========================
+A TiltFactor section begins with a line containing the section name:
+TiltFactor. The following line must contain a number. This factor control the
+amount of banking of track at bends (height of cant of outer rail at curve).
+
+If there is no TiltFactor section in the track file, the default value is 5.0
+
+§ The Tree section
+==================
+A Tree section begins with a line containing the section name: Tree. The next
+line must contain a positive integer, which is the number of trees. Each
+following line contains the 3D coordinate for one tree. The z coordinate has
+no effect, so you can make it null, or whatever you want.
+
+§ The AverageSegmentLength section
+==================================
+A AverageSegmentLength section begins with a line containing the section name:
+AverageSegmentLength. The next line must contain a number. This number is the
+average length of a line segment which is part of the curve. Be carefull,
+because when this length is modified, SupportAbscisse, StartSegment and
+BrakeSegment must also be modified.
+
+The smaller the segment length, the smoother the track is. But more polygon
+have to be drawn.
+
+If there is no AverageSegmentLength in the track file, the default value is
+0.15
+
+Advice
+======
+First build the curve (Track section). You can also fill the SupportCoordinate
+section. But wait for the curve to be completely finished before defining
+SupportAbscisse, StartSegment, and BrakeSegment. You should neither modify the
+AverageSegmentLength when you've finished the curve. Otherwise you will have
+to modify again SupportAbscisse, StartSegment, and BrakeSegment.
+
+When the train starts, it automatically keeps a constant speed, as long as
+the track does not go down. So be careful, and make sure that the track always
+goes up from the start, until the train reaches the very top of the lifthill.

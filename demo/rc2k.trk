@@ -1,0 +1,83 @@
+Track
+34                                     # number of control points
+-1     0    0.5   ;	0		1		0
+-1     3    3     ;	0		1		0  # top of the lifthill
+ 0     4    2.99  ;	0		0		0
+ 1     3    2.98  ;	0		1		0
+ 1     2.5  2.975 ;	0		1		0
+ 0     0    0.5   ;	-0.5	-0.7	0  # under the loop
+-1    -2.5  2.905 ;	0		1		0
+-1    -3    2.9   ;	0		1		0
+ 0    -4    2.85  ;	0		0		0
+ 1    -3    2.8   ;	0		1		0
+ 1     0    0.7   ;	0		1		0
+ 1     3    2.5   ;	0		1		0
+ 0     4    2.35  ;	0		0		0
+-1     3    2.2   ;	0		0		0
+ 0     2    2.05  ;	0		0		0
+ 1     3    1.9   ;	0		1		0
+ 0     4    1.75  ;	0		0		0
+-1     3    1.6   ;	0		1		0
+-0.2   0    1     ;	0		0		0
+-0.1  -1    1.7   ;	0		0		0  # first half of the loop
+ 0     0    2.5   ;	0		0		0  # top of the loop
+ 0.1   1    1.7   ;	0		0		0  # last half of the loop
+ 0.2   0    1     ;	0		0		0
+ 1    -3    2     ;	0		1		0
+ 0    -4    1.85  ;	0		0		0
+-1    -3    1.7   ;	0		0		0
+ 0    -2    1.55  ;	0		0		0
+ 1    -3    1.4   ;	0		0		0
+ 0    -4    1.25  ;	0		0		0
+-1    -3    1.1   ;	0		0		0
+ 0    -2    0.95  ;	0		0		0
+ 1    -3    0.8   ;	0		0		0
+ 0    -4    0.65  ;	0		0		0
+-1    -3    0.5   ;	0		1		0
+
+SupportCoordinate
+12                   # number of coords
+
+-1	1.2	0 ; 0 1 3.5  # high support near start
+
+0	4	0 ; 1 0 0    # north turns (north = positive y :-)
+0	2	0 ; 1 0 0
+1	3	0 ; 0 1 0
+-1	3	0 ; 0 1 0
+
+0	-4	0 ; 1 0 0    # south turns (south = negative y :-)
+0	-2	0 ; 1 0 0
+1	-3	0 ; 0 1 0
+-1	-3	0 ; 0 1 0
+
+1  0  0   ;  0    1	  0
+0  0  0.6 ; -0.5 -0.7 0 # specify support height to be less than 0.6
+
+-1	-1.5 0 ; 0 1 -0.48  # bottom of the support lies on the metal box
+
+SupportAbscisse
+4   # number of index
+267 # support before loop
+321 # support after loop
+285 # second support of the loop
+300 # first support of the loop
+
+Box
+-1 -1 .5  # box coordinate
+2         # box length
+0         # rotation angle
+
+StartSegment
+-5   # index of the segment where the first ride start
+
+BrakeSegment
+-20  # index of segment where the train start to brake
+
+TiltFactor
+5    # control the amount of banking of track at turns
+
+Tree
+3    # number of trees
+3  2 0
+3  0 0
+3 -2 0

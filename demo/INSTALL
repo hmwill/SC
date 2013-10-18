@@ -1,0 +1,44 @@
+HOW TO COMPILE UNDER LINUX ?
+============================
+Check the Makefile and if necessary modify it according to your system
+configuration.
+
+Then make it by typing make.
+
+To execute the animation, make sure that the current directory is the one
+containing the executable file and type ./roller
+
+It should be easy to compile under other unix systems. The provided
+Makefile.irix has been used to build RollerCoaster2000 on an Onyx machine.
+
+HOW TO COMPILE UNDER WINDOWS ?
+==============================
+The provided Makefile.win32 can be used with the lcc-win32 free compiler. This
+compiler is downloadable from http://www.cs.virginia.edu/~lcc-win32
+
+You can download GLUT for win32 from http://www.xmission.com/~nate/glut.html
+However you can't use the glut32.lib file that come with GLUT dll and header,
+because it wasn't produced with lcc-win32.
+
+Although lcc-win32 has its own glut32.lib, you have to modify it before you can
+compile. To do so open the file glut32.exp that lies in lcc's buildlib
+directory with a text editor. Add the following lines at the beginning of this
+file, after the line containing GLUT32.DLL:
+
+____glutGetFCB@4
+____glutSetFCB@8
+___glutCreateMenuWithExit@8
+___glutCreateWindowWithExit@8
+___glutInitWithExit@12
+
+After that, open a shell (msdos prompt), make sure that lcc's bin directory is
+in your PATH environment variable, go in lcc's buildlib directory and type:
+buildlib glut32.exp
+This commands generates a file called glut32.lib. Move this file in lcc's
+library directory.
+
+Now you are ready to compile by typing make. You can type make -f Makefile.win32
+or you can rename Makefile.win32 to Makefile and just call make.
+
+Alternatively, the provided Makefile.vc can be used to compile with Visual
+Studio.
